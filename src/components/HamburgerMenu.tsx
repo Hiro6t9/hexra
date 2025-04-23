@@ -1,10 +1,10 @@
 
 import React, { useState, useEffect, useRef } from "react";
-import { Home, Discord, LayoutDashboard, PanelRight, SquareUser } from "lucide-react";
+import { Home, MessageCircle, LayoutDashboard, PanelRight, SquareUser } from "lucide-react";
 
 const MENU = [
   { name: "Home", href: "#", icon: Home },
-  { name: "Discord", href: "https://discord.gg/AGykahgch8", icon: Discord, external: true },
+  { name: "Discord", href: "https://discord.gg/AGykahgch8", icon: MessageCircle, external: true },
   { name: "Dashboard", href: "#dashboard", icon: LayoutDashboard },
   { name: "Panel", href: "#panel", icon: PanelRight },
   { name: "Billing", href: "#billing", icon: SquareUser }
