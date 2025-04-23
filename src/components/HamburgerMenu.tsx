@@ -3,11 +3,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { Home, MessageCircle, LayoutDashboard, PanelRight, SquareUser } from "lucide-react";
 
 const MENU = [
-  { name: "Home", href: "#", icon: Home },
+  { name: "Home", href: "/", icon: Home },
   { name: "Discord", href: "https://discord.gg/AGykahgch8", icon: MessageCircle, external: true },
-  { name: "Dashboard", href: "#dashboard", icon: LayoutDashboard },
-  { name: "Panel", href: "#panel", icon: PanelRight },
-  { name: "Billing", href: "#billing", icon: SquareUser }
+  { name: "Dashboard", href: "https://dash.hexra.cloud", icon: LayoutDashboard, external: true },
+  { name: "Panel", href: "https://panel.hexra.cloud", icon: PanelRight, external: true },
+  { name: "Billing", href: "https://billing.hexra.cloud", icon: SquareUser, external: true }
 ];
 
 function useLockBodyScroll(isLocked: boolean) {
