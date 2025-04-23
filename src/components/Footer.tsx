@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Discord } from "lucide-react";
+import { Discord as DiscordIcon } from "lucide-react";
 
 const DISCORD_INVITE = "https://discord.gg/AGykahgch8"; // Change to your invite if different
 const DISCORD_WIDGET_ID = "1143934833893410906"; // Example: replace with your server ID
@@ -32,7 +32,7 @@ const Footer = () => {
               border: "1px solid #F2A7B4"
             }}
           >
-            <Discord size={16} className="mr-1" />
+            <DiscordIcon size={16} className="mr-1" />
             Join Discord
           </a>
         </div>
