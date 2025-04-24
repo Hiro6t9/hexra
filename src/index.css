@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -45,6 +46,37 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  /* Light mode variables */
+  :root.light-mode {
+    --background: 0 0% 98%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 255 70% 65%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 196 78% 61%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 196 78% 61%; 
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5% 64.9%;
+  }
 }
 
 @layer base {
@@ -62,6 +94,13 @@
                      radial-gradient(circle at 85% 30%, rgba(30, 174, 219, 0.08) 0%, transparent 25%);
     background-attachment: fixed;
   }
+
+  /* Light mode body styles */
+  :root.light-mode body {
+    @apply bg-white text-hexra-dark;
+    background-image: radial-gradient(circle at 15% 50%, rgba(155, 135, 245, 0.05) 0%, transparent 25%),
+                     radial-gradient(circle at 85% 30%, rgba(30, 174, 219, 0.05) 0%, transparent 25%);
+  }
 }
 
 @layer utilities {
@@ -71,6 +110,15 @@
   
   .glass-card {
     @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl transition-all duration-300 hover:border-hexra-purple/30 hover:shadow-hexra-purple/10 hover:shadow-lg;
+  }
+
+  /* Light mode utility classes */
+  :root.light-mode .glass {
+    @apply bg-black/5 backdrop-blur-md border border-black/10 shadow-lg;
+  }
+  
+  :root.light-mode .glass-card {
+    @apply bg-black/5 backdrop-blur-sm border border-black/10 hover:border-hexra-purple/30;
   }
   
   .text-glow {
@@ -84,11 +132,20 @@
   .gradient-text {
     @apply bg-gradient-to-r from-hexra-purple via-white to-hexra-blue bg-clip-text text-transparent;
   }
+
+  :root.light-mode .gradient-text {
+    @apply bg-gradient-to-r from-hexra-purple via-hexra-dark to-hexra-blue bg-clip-text text-transparent;
+  }
   
   .glass-button {
     @apply bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg px-6 py-3 font-medium transition-all duration-300 
            hover:bg-white/15 hover:border-hexra-purple/50 hover:shadow-lg hover:shadow-hexra-purple/10
            active:scale-95;
+  }
+
+  :root.light-mode .glass-button {
+    @apply bg-black/10 backdrop-blur-sm border border-black/10 
+           hover:bg-black/15 hover:border-hexra-purple/50;
   }
 
   .neon-button {
@@ -101,6 +158,10 @@
   .moving-gradient {
     background-size: 200% 200%;
     animation: gradientMovement 5s ease infinite;
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 8px rgba(155, 135, 245, 0.4);
   }
   
   @keyframes gradientMovement {
